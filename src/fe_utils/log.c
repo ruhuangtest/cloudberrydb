@@ -115,7 +115,7 @@ cbdb_log(cbdb_log_level level, const char* file, int line, const char* format, .
     {
         char buffer[1000];
         va_start(arg_ptr, format);
-        vsnprintf(buffer, len + 1, format, arg_ptr);
+        vfprintf(log_file, format, arg_ptr);
         va_end(arg_ptr);
         buffer[len] = 0;
         fprintf(log_file, "%s\n", buffer);   
